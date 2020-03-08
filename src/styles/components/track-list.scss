@@ -1,0 +1,16 @@
+.tracks-list{
+    width: 60%;
+    margin: 20px auto;
+}
+
+
+.track-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list-title{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+}

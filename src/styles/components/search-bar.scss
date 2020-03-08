@@ -1,0 +1,28 @@
+
+
+.search-container{
+    border-bottom: 1px solid #dfe2e7;
+}
+
+.filter-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0 15%;
+    padding-bottom: 20px;
+    
+
+    .filter-secodery {
+        margin: 0 30px;
+    }
+}
+
+.search-btn{
+    display: block;
+    margin: 10px auto;
+}
+
+.search-title{
+    margin: 10px;
+    font-size: 2rem;
+}
