@@ -3,6 +3,10 @@ import axios from 'axios'
 const CLIENT_ID = '6e3a5772c02b4661865df810bea63f38';
 const CLIENT_SECRET = 'a7bea6a24323483291935a90753b3a65';
 const SPOTIFYKEY = 'spotifyKey';  
+const headers = {
+  'Content-Type': 'application/x-www-form-urlencoded',
+  'Authorization': 'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64') // client id and secret from env
+}
     
 // const BASE_URL = (process.env.NODE_ENV !== 'development') ?
 //         '/api/items' :
@@ -24,10 +28,7 @@ async function getToken(){
     params: { // in axios data is the body request
       'grant_type': 'client_credentials',
     },
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64') // client id and secret from env
-    }
+    headers: headers
   }).then(body => {
     console.log(body);
   })
