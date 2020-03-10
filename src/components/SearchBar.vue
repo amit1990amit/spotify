@@ -4,10 +4,10 @@
         <form @submit="onSearch" >
             <div class="filter-container">
                 <div class="searchItems filter-secodery">   
-                    <el-input @submit="onSearch" placeholder="Search" v-model="query"></el-input>
+                    <el-input @submit="onSearch" placeholder="Search" v-model="query" required></el-input>
                 </div>
 
-                <el-select v-model="tag" placeholder="Select">
+                <el-select v-model="tag" placeholder="Select" required>
                     <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -29,7 +29,7 @@ export default {
     data() {
         return {
             query:'',
-            tag:'',
+            tag:'artist',
             options: [
             {
             value: "artist",
