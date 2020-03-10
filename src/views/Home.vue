@@ -45,6 +45,9 @@ export default {
     artist(){
       return this.$store.getters.artist
     }
+  },
+  created(){
+    this.$store.dispatch({type: 'loadToken'})
   }
 }
 </script>

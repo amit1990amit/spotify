@@ -37,6 +37,10 @@ export default new Vuex.Store({
     async loadArtist(context, {query}){
       const artist = await SpotifyService.getArtist(query);
       context.commit({type: 'setArtist', artist})
+    },
+    async loadToken(context){
+      console.log('ssss',context)
+      await SpotifyService.saveToken()
     }
   },
   modules: {
