@@ -29,21 +29,21 @@ export default {
     searchTraks(query){
       this.isTracks = true;
       this.isArtist = false;
-      this.$store.dispatch({type: 'loadTracks',query})
+      this.$store.dispatch({type: 'loadTracks',query});
   
     },
     searchArtist(query){
       this.isTracks = false;
       this.isArtist = true;
-      this.$store.dispatch({type: 'loadArtist',query})
+      this.$store.dispatch({type: 'loadArtist',query});
     },
   },
   computed:{
     tracks(){
-      return this.$store.getters.tracks
+      return this.$store.getters.tracks;
     },
     artist(){
-      return this.$store.getters.artist
+      return this.$store.getters.artist;
     }
   },
   created(){

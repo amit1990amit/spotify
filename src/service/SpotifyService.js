@@ -1,6 +1,6 @@
-import axios from 'axios'
-const CLIENT_ID = '6e3a5772c02b4661865df810bea63f38';
-const CLIENT_SECRET = 'a7bea6a24323483291935a90753b3a65';
+import axios from 'axios';
+const CLIENT_ID = 'paste id';
+const CLIENT_SECRET = 'paste secret';
 const SPOTIFYKEY = 'spotifyKey'; 
 const qs = require('querystring');
 const config = {
@@ -30,7 +30,7 @@ export default {
 async function getToken(){
   return await axios.post('https://accounts.spotify.com/api/token',qs.stringify(params),config)
   .then(res => {
-    return res.data.access_token
+    return res.data.access_token;
   })
   .catch(err => {
     console.log(err);
@@ -49,23 +49,23 @@ async function getArtist(searchBy){
 }
 
 async function getData(name,type){
-  let token = loadFromStorage(SPOTIFYKEY)
-  configData.headers.Authorization = 'Bearer ' + token 
+  let token = loadFromStorage(SPOTIFYKEY);
+  configData.headers.Authorization = 'Bearer ' + token ;
   let data = await  axios.get(`https://api.spotify.com/v1/search?q=${name}&type=${type}`,configData)
     .then(res => {
-       return res.data
+       return res.data;
     }).catch(err => {
-      console.log(err)
+      console.log(err);
     })
   if(!data) {
     await saveToken()
-    return getData(name,type)
+    return getData(name,type);
   } 
-  return data
+  return data;
 }
 async function saveToken(){
-  let token = await getToken()
-  saveToStorage(SPOTIFYKEY,token)
+  let token = await getToken();
+  saveToStorage(SPOTIFYKEY,token);
 }
 
 function saveToStorage(key, value) {
@@ -73,6 +73,6 @@ function saveToStorage(key, value) {
 }
 function loadFromStorage(key) {
   var str = localStorage.getItem(key);
-  var value = JSON.parse(str)
+  var value = JSON.parse(str);
   return value;
 }

@@ -2,9 +2,9 @@
     <section class="artist-info-main" v-if="artist && artist.images">
         <img class="artist-img" :src="artist.images[1].url">
         <div class="artist-info-container" v-if="artist">
-            <h2>Name: {{artist.name}}</h2>
-            <h2>Genre: {{artist.genres.join(', ')}}</h2>
-            <h2>Number of followers: {{artist.followers.total}}</h2>
+            <p><span class="bold">Name: </span>{{artist.name}}</p>
+            <p><span class="bold">Genre: </span>{{artist.genres.join(', ')}}</p>
+            <p><span class="bold">Number of followers: </span>{{artist.followers.total}}</p>
         </div>
 
     </section>

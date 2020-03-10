@@ -45,9 +45,9 @@ export default {
     methods:{
         onSearch(){
             if(this.tag === 'artist'){
-                this.$emit('searchArtist',this.query)
+                this.$emit('searchArtist',this.query);
             } else if(this.tag === 'track') {
-               this.$emit('searchTraks',this.query) 
+               this.$emit('searchTraks',this.query) ;
             }
             
         }
